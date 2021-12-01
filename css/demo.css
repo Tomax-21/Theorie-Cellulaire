@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100vh;
+	color: #57585c;
+	color: var(--color-text);
+	background-color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Color schemes */
+.demo-1 {
+	--color-text: #fff;
+	--color-link: #5f5f5f;
+	--color-link-hover: #ff963b;
+	--color-enter: #fff;
+	--color-title: #fff;
+	--color-subtitle: #5f5f5f;
+	--color-menu-item: #000;
+	--color-menu-item-hover: /*#ff963b;*/#FD7014;
+	--color-menu-item-hover-alt: #8544da;
+
+	/*couleur de l'anime*/
+	--color-content: /*#222325;*/#393E46;
+
+
+	
+	--color-content-fixed: rgb(243, 239, 239);
+	--font-alt: 200 6vw/1 'Spectral','Montserrat', serif;
+	--color-next: #5f5f5f;
+	--color-next-hover: #8544da;
+}
+
+
+/* Page Loader */
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ccd8e4;
+	background: var(--color-content);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	pointer-events: none;
+	background: #333;
+	background: var(--color-text);
+	border-radius: 50%;
+	animation: loaderAnim 0.5s ease infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	0% {
+		transform: scale3d(0.5,0.5,1);
+	}
+	100% {
+		transform: scale3d(1,1,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #5d93d8;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #423c2b;
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+
+/* Page transitions */
+main {
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.content {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.content--intro {
+	z-index: 100;
+	height: 200vh;
+}
+
+.content--fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: var(--color-content-fixed);
+	/* background-image: var(--bg-img); */
+	/* can't use this as relative path until it's fixed in Chrome https://bugs.chromium.org/p/chromium/issues/detail?id=618165 */
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.content__inner {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.content--intro .content__inner {
+	background: var(--color-content);
+}
+
+.content h2 {
+	margin: 0;
+}
+
+.shape-wrap {
+	position: relative;
+	z-index: 10;
+	margin: -5px 0 0 0; /* Hide the gap */
+}
+
+.shape {
+	height: 100vh;
+	width: 100%;
+	display: block;
+	fill: var(--color-content);
+}
+
+.content__title {
+	font: var(--font-alt);
+	color: var(--color-title);
+	margin: 0;
+	line-height: 1;
+}
+
+.content__title--filled {
+	background: var(--color-content);
+	padding: 0.25em 0.5em;
+}
+
+.content__subtitle {
+	font: var(--font-alt);
+	font-size: 1.5em;
+	color: var(--color-subtitle);
+	padding: 0.5em 0 0 0;
+	margin: 0;
+}
+
+.enter, .explore {    
+	margin: 6vh 0 0 0;
+	font-size: 1em;
+	letter-spacing: 3px;
+	cursor: pointer;
+	font-weight: bold;
+	white-space: pre;
+	color: var(--color-enter);
+	pointer-events: auto;
+}
+
+.enter:hover,
+.enter:focus {    
+	color: var(--color-enter);
+}
+
+.enter span {
+	display: inline-block;
+}
+
+.content__text {
+	font-size: 1.85em;
+	max-width: 800px;
+	text-align: left;
+}
+
+.content__text a {
+	color: var(--color-menu-item);
+}
+
+.content__text a:hover, 
+.content__text a:focus {
+	color: var(--color-menu-item-hover);
+}
+
+@media screen and (max-width: 50em) {
+
+	.content--intro .content__inner,
+	.content__title {
+		font-size: 2em;
+	}
+
+	.content__text {
+		padding: 1em;
+		font-size: 1em;
+	}
+
+}
+
+.titleOpacity {
+	opacity: 0.1;
+	font-size: 8em;
+	position: absolute;
+}
+
+
+#apresAnim {
+	color: black;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font: var(--font-alt);
+	font-size: 1.5em;
+}
+
+.btn {
+	width: 150px;
+	padding: 5px 20px;
+	position: relative;
+	color: white;
+	background-color: /*rgb(132, 189, 255);*/#393E46;
+	font-size: 18px;
+	border-radius: 50px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 1px 1px 6px /*rgb(132, 189, 255);*/#393E46;
+	overflow: hidden;
+	transition: 400ms;
+}
+
+.btn:hover {
+	background-color: /*rgb(251, 121, 121);*/ #FD7014;
+	width: 160px;
+	padding-right: 40px;
+	box-shadow: 1px 1px 6px /*rgb(251, 121, 121);*/ #FD7014;
+}
+
+.btn .fas {
+	position: absolute;
+	top: 28%;
+	margin-left: 10px;
+	color: white;
+	transform: translateX(-50%);
+	opacity: 0;
+}
+
+.btn:hover .fas {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.btn::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	transform: scaleX(0);
+}
+
+.bnt:active::before {
+	transform: scaleX(1);
+}
+/*503 --> 299 */

@@ -1,0 +1,791 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+
+/* couleur */
+/* blanc: #edf0f1 */
+/* orange #f19c1c */
+/* gris   background: rgb(41, 39, 39); */
+/* https://www.color-hex.com/color-palette/23083 */
+/* vert #0caba4*/
+
+* {
+  --color-blanc: /*#edf0f1;*/ /*rgb(243, 239, 239)*/#EEEEEE;
+  --color-principal: /*#579ed2;*/ #393E46;
+  --color-secondaire: /*#0caba4;*//*#ee6369;*/#FD7014;
+  --color-card: /*#ee6369;*/#FD7014;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    zoom: 98% !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(146, 140, 140);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(219, 213, 213);
+}
+
+.friseChrono {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.planete {
+  padding-left: 100px;
+  color: black;
+  width: auto;
+  height: 600px;
+  background-image: url(bg_t1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+}
+.premierePartiMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#main-text {
+ font-size: 2.2em;
+  padding-bottom: 15px;
+}
+
+#deuxieme-text {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+/* SmoothColors */
+.smoothcolor {
+  width: 100%;
+  height: 100px;
+  background-color: var(--color-principal);
+}
+
+
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: var(--color-principal);
+}
+
+.nav_links a,
+.nav-left, .nav-1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--color-blanc);
+  text-decoration: none;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+}
+
+.nav_links li {
+  padding: 0px 20px;
+}
+  /* petite anim color */
+.nav_links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: var(--color-secondaire);
+}
+  
+.nav-left {
+  padding: 9px 25px;
+  background: var(--color-secondaire);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.nav-left:hover {
+  background-color: #dd6617;
+}
+
+.titre-def {
+  background-color: var(--color-blanc);
+  color: black;
+  font-size: 3em;
+  /*text-align: center;*/
+  padding: 50px;
+}
+
+.def {
+  font-size: 2em;
+  padding-left: 200px;
+  padding-right: 200px;
+  background-color: var(--color-blanc);
+}
+
+.axiome {
+  padding: 50px;
+}
+
+.titre-sys {
+  color: black;
+  font-size: 3em;
+  text-align: center;
+  height: 100px;
+  padding-bottom: 145px;
+}
+
+.sys-sol {
+  text-align: center;
+  background: var(--color-blanc);
+}
+
+.sys-img {
+  margin: 6%;
+  margin-right: 6%;
+  max-width: 90%;
+  min-width: 10%;
+}
+
+.nav-sys {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.nav-sys .nav-2 {
+  margin: 15px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+
+}
+
+.nav-2::after {
+  content: '';
+  height: 2px;
+  width: 0%;
+  background: black;
+  display: block;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-2:hover::after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: var(--color-secondaire);
+  display: flex;
+}
+
+.nav-2:hover {
+  color: var(--color-secondaire);
+}
+
+
+div.histoire1 {
+  display: flex;
+  padding-left: 3%;
+  padding-right: 3%;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: var(--color-principal);
+  padding-top: 120px;
+  padding-bottom: 100px;
+  
+}
+
+div.histoire2 {
+  display: flex;
+  padding-left: 3%;
+  padding-right: 3%;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: rgb(243, 239, 239);
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+
+.carte {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+
+.carte::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-card);
+  /*background: #2196f3;*/
+  /* transforme l'angle du carré */
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+
+.carte:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+
+.carte::after {
+  content: "";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+
+
+.cartejansen::after {
+  content: "Microscope";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.cartehooke::after {
+  content: "Cellule";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteredi::after {
+  content: "Apparition";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 7em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteleeu::after {
+  content: "Microscope";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 7em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteschleiden::after {
+  content: "Cellule";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 7em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteschwann::after {
+  content: "Cellule";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.cartevirchow::after {
+  content: "Cellule";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.cartepaster::after {
+  content: "Theorie";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+
+.carteflemming::after {
+  content: "Cellule";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteruska::after {
+  content: "Microscope";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteruska #cruska {
+  max-width: 90%;
+  transition: 0.5s;
+}
+
+.carteruska:hover #cruska {
+  max-width: 70%;
+}
+
+
+.carteshimomura::after {
+  content: "Microscope";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+.carteshimomura #cshimo {
+  max-width: 55%;
+  transition: 0.5s;
+}
+
+.carteshimomura:hover #cshimo {
+  max-width: 45%;
+}
+
+.cartebinning::after {
+  content: "Microscope";
+  position: absolute;
+  /*mettre en bas*/
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgba(0,0,0,0.2);
+}
+
+
+.carte .imageTerre {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.carte .imageTerre img {
+  max-width: 70%;
+  transition: 0.5s;
+}
+
+.carte:hover .imageTerre img {
+  max-width: 55%;
+}
+
+.carte .contenuTerre {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.carte .contenuTerre h3 {
+  font-size: 45px;
+  color: var(--color-blanc);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#h3Leeuwenhoek {
+  font-size: 35px;
+}
+
+
+
+.carte .contenuTerre .infoTerre {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: var(--color-blanc);
+  text-decoration: none;
+  /*background: #2196f3;*/
+  background: var(--color-card);
+  border-radius: 30px;
+ /* text-transform: uppercase;*/
+  letter-spacing: 1px;
+  transition: 0.5s; 
+}
+
+.carte:hover .contenuTerre .infoTerre {
+  top: 0;
+  opacity: 1;
+}
+
+
+.texteP:hover .infoSup {
+  transition: 0.5s ease;
+  opacity: 1;
+  position: absolute;
+  transform: translateY(30px);
+  transition-delay: 0.5s;
+}
+
+.infoSup {
+  transition-delay: 0.5s;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.5s ease;
+  position: absolute;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: var(--color-blanc);
+  text-decoration: none;
+  background: var(--color-secondaire);
+  border-radius: 30px;
+  letter-spacing: 1px;
+  transform: translateY(-100px);
+}
+
+
+.texteP {
+  color: var(--color-blanc);
+  text-justify: auto;
+  padding-left: 15%;
+  padding-right: 15%;
+  width: 75%;
+  font-size: 30px;
+  z-index: 10;
+  transition: 0.5s all ease;
+}
+
+.histoire2 .texteP {
+  color: black;
+  text-justify: auto;
+  padding-left: 15%;
+  padding-right: 15%;
+  width: 75%;
+  font-size: 30px;
+}
+ 
+
+div .num {
+  position: absolute;
+  left: 22%;
+  z-index: 9;
+  width: 400px;
+  height: 150px;
+  opacity: 0.1;
+}
+
+
+div .num2 {
+  position: absolute;
+  left: 22%;
+  z-index: 9;
+  width: 900px;
+  height: 150px;
+  opacity: 0.1;
+}
+
+
+.num h4 {
+  color: var(--color-blanc) !important;
+  font-size: 150px;
+  transform: translate(275px, -50px);
+  width: 270px;
+}
+
+
+.num2 h4 {
+  color: black !important;
+  font-size: 150px;
+  transform: translate(700px, -50px);
+  width: 270px;
+}
+
+
+
+.foot {
+  padding: 2%;
+  text-align: center;
+  justify-content: center;
+  background: var(--color-principal);
+  color: rgb(90, 81, 81);
+}
+
+@media (min-width: 1450px) {
+  .texteP {
+    font-size: 28px;
+  }
+
+  .histoire2 .texteP {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .texteP {
+    font-size: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .histoire2 .texteP {
+    font-size: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .num h4 {
+    color: var(--color-blanc);
+    font-size: 200px;
+    transform: translate(100px, -50px);
+    width: 270px;
+  }
+
+  .num2 h4 {
+    color: black;
+    font-size: 200px;
+    transform: translate(380px, -50px);
+    width: 270px;
+  }
+
+  div .num2 {
+    width: 800px;
+  }
+
+}
+
+@media (max-width: 1150px) {
+  .texteP {
+    font-size: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .histoire2 .texteP {
+    font-size: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+  }
+  .num h4 {
+    color: var(--color-blanc);
+    font-size: 200px;
+    transform: translate(75px, -50px);
+    width: 270px;
+  }
+
+  .num2 h4 {
+    color: black;
+    font-size: 200px;
+    transform: translate(300px, -50px);
+    width: 270px;
+  }
+
+}
+
+
+
+@media (max-width: 1225px) {
+  .num2 h4 {
+    color: black;
+    font-size: 200px;
+    transform: translate(280px, -50px);
+    width: 270px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .num2 h4 {
+    color: black;
+    font-size: 200px;
+    transform: translate(200px, -50px);
+    width: 270px;
+  }
+}
+
+@media (max-width: 970px) {
+  .texteP {
+    font-size: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .histoire2 .texteP {
+    font-size: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .num h4 {
+    color: var(--color-blanc);
+    font-size: 200px;
+    transform: translate(100px, -50px);
+    width: 270px;
+  }
+  
+  .num2 h4 {
+    color: black;
+    font-size: 200px;
+    transform: translate(120px, -50px);
+    width: 270px;
+  }
+
+  div .num2 {
+    width: 400px;
+  }
+
+  .nav-sys {
+    font-size: 25px;
+  }
+
+}
+
+@media (max-width: 840px) {
+  .num2 h4 {
+    color: black;
+    font-size: 200px;
+    transform: translate(50px, -50px);
+    width: 270px;
+  }
+
+  .nav-sys {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  div .num2 {
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 740px) {
+  div .num {
+    opacity: 0;
+  }
+
+  div .num2 {
+    opacity: 0;
+  }
+
+  div .num2 {
+    width: 0px;
+  }
+
+  .nav-sys {
+    font-size: 15px;
+    font-weight: 550;
+  }
+}
+
+
+.sourcediv {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+}
+.sourcetitle {
+  display: flex;
+  padding-top: 5%;
+  padding-bottom: 50px;
+  padding-left: 25px;
+  font-size: 25px;
+
+}
+
+.sourceobject {
+  font-size: 20px;
+  display: flex;
+  padding-left: 5%;
+  justify-content: center;
+ /* align-items: center;*/
+  flex-direction: column;
+  line-height: 50px;
+}
+
+.sourcetextopacity {
+	opacity: 0.1;
+	font-size: 8em;
+	position: absolute;
+}
